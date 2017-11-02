@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:teix="http://www.tei-c.org/ns/Examples"
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:iso:std:iso:30042:ed:3.0">
    <define name="entity.basicText">
       <zeroOrMore>
