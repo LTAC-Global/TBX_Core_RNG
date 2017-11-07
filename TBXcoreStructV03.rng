@@ -91,7 +91,7 @@
    <define name="id.attribute.id">
       <optional>
          <attribute name="id">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            
             <data type="ID"/>
          </attribute>
       </optional>
@@ -102,7 +102,7 @@
    <define name="target-IDREF.attribute.target">
       <optional>
          <attribute name="target">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            
             <data type="IDREF"/>
          </attribute>
       </optional>
@@ -117,7 +117,7 @@
                the language of the element content. The allowed values are found in IETF RFC 4646 or
                its successor. This attribute is optional for elements that use this attribute class.
                For a description, see the information at the tbx element.</a:documentation>
-            <text/>
+            <data type="language"/>
          </attribute>
       </optional>
    </define>
@@ -136,9 +136,16 @@
          </attribute>
       </optional>
    </define>
+   <define name="subtype.attribute">
+      <optional>
+         <attribute name="subType">
+            <text/>
+         </attribute>
+      </optional>
+   </define>
    <define name="hi">
       <element name="hi">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="hi.content"/>
          <ref name="hi.localattributes"/>
       </element>
@@ -151,7 +158,7 @@
       <ref name="lang.attributes"/>
       <optional>
          <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            
             <choice>
                <value>entailedTerm</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
@@ -194,7 +201,7 @@
    </define>
    <define name="foreign">
       <element name="foreign">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="foreign.content"/>
          <ref name="foreign.localattributes"/>
       </element>
@@ -207,7 +214,7 @@
    </define>
    <define name="sc">
       <element name="sc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="sc.content"/>
          <ref name="sc.localattributes"/>
       </element>
@@ -216,22 +223,15 @@
       <text/>
    </define>
    <define name="sc.localattributes">
+      <ref name="idtype.attributes"/>
       <optional>
-         <attribute name="i">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
-      <optional>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
+         <ref name="subtype.attribute"/>
+         <ref name="target-IDREF.attributes"/>
       </optional>
    </define>
    <define name="ec">
       <element name="ec">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="ec.content"/>
          <ref name="ec.localattributes"/>
       </element>
@@ -241,15 +241,17 @@
    </define>
    <define name="ec.localattributes">
       <optional>
-         <attribute name="i">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
+            <attribute name="startRef">
+               <text/>
+            </attribute>
+            <ref name="idtype.attributes"/>
+            <ref name="subtype.attribute"/>
+            <ref name="target-IDREF.attributes"/>
       </optional>
    </define>
    <define name="ph">
       <element name="ph">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="ph.content"/>
          <ref name="ph.localattributes"/>
       </element>
@@ -260,14 +262,13 @@
    <define name="ph.localattributes">
       <optional>
          <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <text/>
          </attribute>
       </optional>
    </define>
    <define name="admin">
       <element name="admin">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="admin.content"/>
          <ref name="admin.localattributes"/>
       </element>
@@ -289,7 +290,7 @@
    </define>
    <define name="adminGrp">
       <element name="adminGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="adminGrp.content"/>
          <ref name="adminGrp.localattributes"/>
       </element>
@@ -323,7 +324,7 @@
    </define>
    <define name="adminNote">
       <element name="adminNote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="adminNote.content"/>
          <ref name="adminNote.localattributes"/>
       </element>
@@ -334,7 +335,7 @@
    <define name="adminNote.localattributes">
       <ref name="IDLangTgtDtyp.attributes"/>
       <attribute name="type">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          
             <ref name="adminNote.types"/>
          
@@ -343,7 +344,7 @@
    </define>
    <define name="date">
       <element name="date">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="date.content"/>
          <ref name="date.localattributes"/>
       </element>
@@ -356,7 +357,7 @@
    </define>
    <define name="descrip">
       <element name="descrip">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="descrip.content"/>
          <ref name="descrip.localattributes"/>
       </element>
@@ -378,7 +379,7 @@
    </define>
    <define name="descripGrp">
       <element name="descripGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="descripGrp.content"/>
          <ref name="descripGrp.localattributes"/>
       </element>
@@ -417,7 +418,7 @@
    </define>
    <define name="descripNote">
       <element name="descripNote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="descripNote.content"/>
          <ref name="descripNote.localattributes"/>
       </element>
@@ -439,7 +440,7 @@
    </define>
    <define name="langSec">
       <element name="langSec">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="langSec.content"/>
          <ref name="langSec.localattributes"/>
       </element>
@@ -462,7 +463,7 @@
    </define>
    <define name="note">
       <element name="note">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="note.content"/>
          <ref name="note.localattributes"/>
       </element>
@@ -475,7 +476,7 @@
    </define>
    <define name="ref">
       <element name="ref">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="ref.content"/>
          <ref name="ref.localattributes"/>
       </element>
@@ -486,7 +487,7 @@
    <define name="ref.localattributes">
       <ref name="IDLangTgtDtyp.attributes"/>
       <attribute name="type">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          
             <ref name="ref.types"/>
          
@@ -495,7 +496,6 @@
    </define>
    <define name="term">
       <element name="term">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="term.content"/>
          <ref name="term.localattributes"/>
       </element>
@@ -508,7 +508,7 @@
    </define>
    <define name="conceptEntry">
       <element name="conceptEntry">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="conceptEntry.content"/>
          <ref name="conceptEntry.localattributes"/>
       </element>
@@ -524,7 +524,6 @@
    </define>
    <define name="termNote">
       <element name="termNote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="termNote.content"/>
          <ref name="termNote.localattributes"/>
       </element>
@@ -539,13 +538,11 @@
             the data-category type of the termNote, such as partOfSpeech or
             termType.</a:documentation>
             <ref name="termNote.types"/>
-         
       </attribute>
       <ref name="dca.attributes"/>
    </define>
    <define name="termNoteGrp">
       <element name="termNoteGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="termNoteGrp.content"/>
          <ref name="termNoteGrp.localattributes"/>
       </element>
@@ -562,7 +559,6 @@
    </define>
    <define name="termSec">
       <element name="termSec">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="termSec.content"/>
          <ref name="termSec.localattributes"/>
       </element>
@@ -571,7 +567,10 @@
       <ref name="term"/>
       <choice>
          <zeroOrMore>
-            <ref name="termNote"/>
+            <choice>
+               <ref name="termNote"/>
+               <ref name="termNoteGrp"/>
+            </choice>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="DCTnamespaceElements"/>
@@ -584,7 +583,6 @@
    </define>
    <define name="transac">
       <element name="transac">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="transac.content"/>
          <ref name="transac.localattributes"/>
       </element>
@@ -598,15 +596,12 @@
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The
             attribute value transactionType ensures that the content of the transac element will be
             a transaction type.</a:documentation>
-         
             <ref name="transac.types"/>
-         
       </attribute>
       <ref name="dca.attributes"/>
    </define>
    <define name="transacGrp">
       <element name="transacGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="transacGrp.content"/>
          <ref name="transacGrp.localattributes"/>
       </element>
@@ -642,7 +637,7 @@
    </define>
    <define name="transacNote">
       <element name="transacNote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="transacNote.content"/>
          <ref name="transacNote.localattributes"/>
       </element>
@@ -653,16 +648,12 @@
    <define name="transacNote.localattributes">
       <ref name="IDLangTgtDtyp.attributes"/>
       <attribute name="type">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         
             <ref name="transacNote.types"/>
-         
       </attribute>
       <ref name="dca.attributes"/>
    </define>
    <define name="xref">
       <element name="xref">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="xref.content"/>
          <ref name="xref.localattributes"/>
       </element>
@@ -678,16 +669,12 @@
          <text/>
       </attribute>
       <attribute name="type">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         
             <ref name="xref.types"/>
-         
       </attribute>
       <ref name="dca.attributes"/>
    </define>
    <define name="tbx">
       <element name="tbx">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="tbx.content"/>
          <ref name="tbx.localattributes"/>
       </element>
@@ -719,12 +706,13 @@
             instance shall adhere to the default XCS file. If the TBX document instance adheres to
             another XCS file, then the type attribute value can consist of TBX- plus another word
             associated with the XCS file, such as 'TBX-Basic'.</a:documentation>
-         <text/>
+         <data type="string">
+            <param name="pattern">TBX-.+</param>
+         </data>
       </attribute>
    </define>
    <define name="tbxHeader">
       <element name="tbxHeader">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="tbxHeader.content"/>
          <ref name="tbxHeader.localattributes"/>
       </element>
@@ -743,7 +731,7 @@
    </define>
    <define name="p">
       <element name="p">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="p.content"/>
          <ref name="p.localattributes"/>
       </element>
@@ -755,29 +743,13 @@
       <ref name="idlang.attributes"/>
       <optional>
          <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>DCSName</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The
-                  name of the XCS file that constrains the content of the TBX document
-                  instance.</a:documentation>
-               <value>XCSURI</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The
-                  URI of the XCS file that constrains the content of the TBX document
-                  instance.</a:documentation>
-               <value>XCSContent</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The
-                  content of an XCS file, embedded directly in the TBX document instance. Note that
-                  this content cannot be validated by the TBX DTD and therefore should be removed
-                  from the TBX document instance, or commented out, prior to such validation.
-               </a:documentation>
-            </choice>
+            <text/>
          </attribute>
       </optional>
    </define>
    <define name="fileDesc">
       <element name="fileDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="fileDesc.content"/>
          <ref name="fileDesc.localattributes"/>
       </element>
@@ -798,7 +770,7 @@
    </define>
    <define name="titleStmt">
       <element name="titleStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="titleStmt.content"/>
          <ref name="titleStmt.localattributes"/>
       </element>
@@ -814,7 +786,7 @@
    </define>
    <define name="title">
       <element name="title">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="title.content"/>
          <ref name="title.localattributes"/>
       </element>
@@ -827,7 +799,7 @@
    </define>
    <define name="publicationStmt">
       <element name="publicationStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="publicationStmt.content"/>
          <ref name="publicationStmt.localattributes"/>
       </element>
@@ -842,7 +814,6 @@
    </define>
    <define name="sourceDesc">
       <element name="sourceDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="sourceDesc.content"/>
          <ref name="sourceDesc.localattributes"/>
       </element>
@@ -857,7 +828,7 @@
    </define>
    <define name="encodingDesc">
       <element name="encodingDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="encodingDesc.content"/>
          <ref name="encodingDesc.localattributes"/>
       </element>
@@ -872,7 +843,7 @@
    </define>
    <define name="revisionDesc">
       <element name="revisionDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="revisionDesc.content"/>
          <ref name="revisionDesc.localattributes"/>
       </element>
@@ -887,7 +858,7 @@
    </define>
    <define name="change">
       <element name="change">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="change.content"/>
          <ref name="change.localattributes"/>
       </element>
@@ -902,7 +873,7 @@
    </define>
    <define name="text">
       <element name="text">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="text.content"/>
          <ref name="text.localattributes"/>
       </element>
@@ -918,7 +889,7 @@
    </define>
    <define name="body">
       <element name="body">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="body.content"/>
          <ref name="body.localattributes"/>
       </element>
@@ -933,7 +904,7 @@
    </define>
    <define name="back">
       <element name="back">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="back.content"/>
          <ref name="back.localattributes"/>
       </element>
@@ -948,7 +919,7 @@
    </define>
    <define name="refObjectSec">
       <element name="refObjectSec">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="refObjectSec.content"/>
          <ref name="refObjectSec.localattributes"/>
       </element>
@@ -961,13 +932,11 @@
    <define name="refObjectSec.localattributes">
       <ref name="id.attributes"/>
       <attribute name="type">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <text/>
       </attribute>
    </define>
    <define name="refObject">
       <element name="refObject">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="refObject.content"/>
          <ref name="refObject.localattributes"/>
       </element>
@@ -986,7 +955,7 @@
    </define>
    <define name="item">
       <element name="item">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="item.content"/>
          <ref name="item.localattributes"/>
       </element>
@@ -999,7 +968,7 @@
    </define>
    <define name="itemGrp">
       <element name="itemGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="itemGrp.content"/>
          <ref name="itemGrp.localattributes"/>
       </element>
@@ -1013,7 +982,7 @@
    </define>
    <define name="itemSet">
       <element name="itemSet">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         
          <ref name="itemSet.content"/>
          <ref name="itemSet.localattributes"/>
       </element>
