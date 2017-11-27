@@ -666,7 +666,9 @@
       <attribute name="target">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The URI of
             the external object.</a:documentation>
-         <text/>
+         <data type="anyURI">
+            <param name="pattern">https?://.+</param>
+         </data>
       </attribute>
       <attribute name="type">
             <ref name="xref.types"/>
