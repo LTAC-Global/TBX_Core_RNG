@@ -91,7 +91,6 @@
    <define name="id.attribute.id">
       <optional>
          <attribute name="id">
-            
             <data type="ID"/>
          </attribute>
       </optional>
@@ -102,7 +101,6 @@
    <define name="target-IDREF.attribute.target">
       <optional>
          <attribute name="target">
-            
             <data type="IDREF"/>
          </attribute>
       </optional>
@@ -136,12 +134,48 @@
          </attribute>
       </optional>
    </define>
-   <define name="subtype.attribute">
+   <define name="dispEquivSubType.attributes">
       <optional>
-         <attribute name="subType">
+         <attribute name="disp">
             <text/>
          </attribute>
+         <attribute name="equiv">
+            <text/>
+         </attribute>
+         <choice>
+              <group>
+                 <attribute name="subType">
+                    <data type="string">
+                       <param name="pattern">[^\s:]+:[^\s:]+</param>
+                    </data>
+                 </attribute>
+                 <ref name="XLIFFinlineType.attribute"/>
+              </group>
+            <ref name="XLIFFinlineType.attribute"/>
+         </choice>
       </optional>
+   </define>
+   <define name="XLIFFisolated.attribute">
+      <optional>
+       <attribute name="isolated">
+          <choice>
+             <value>yes</value>
+             <value>no</value>
+          </choice>
+       </attribute>
+      </optional>
+   </define>
+   <define name="XLIFFinlineType.attribute">
+      <attribute name="type">
+         <choice>
+            <value>fmt</value>
+            <value>ui</value>
+            <value>quote</value>
+            <value>link</value>
+            <value>image</value>
+            <value>other</value>
+         </choice>
+      </attribute>
    </define>
    <define name="hi">
       <element name="hi">
@@ -220,13 +254,16 @@
       </element>
    </define>
    <define name="sc.content">
-      <text/>
+      <empty/>
    </define>
    <define name="sc.localattributes">
-      <ref name="idtype.attributes"/>
+      <attribute name="id">
+         <data type="ID"/>
+      </attribute>
       <optional>
-         <ref name="subtype.attribute"/>
+         <ref name="dispEquivSubType.attributes"/>
          <ref name="target-IDREF.attributes"/>
+         <ref name="XLIFFisolated.attribute"/>
       </optional>
    </define>
    <define name="ec">
@@ -237,33 +274,36 @@
       </element>
    </define>
    <define name="ec.content">
-      <text/>
+      <empty/>
    </define>
    <define name="ec.localattributes">
       <optional>
-            <attribute name="startRef">
-               <text/>
+            <attribute name="id">
+               <data type="ID"/>
             </attribute>
-            <ref name="idtype.attributes"/>
-            <ref name="subtype.attribute"/>
+            <attribute name="startRef">
+               <data type="IDREF"/>
+            </attribute>
+            <ref name="dispEquivSubType.attributes"/>
+            <ref name="XLIFFisolated.attribute"/>
             <ref name="target-IDREF.attributes"/>
       </optional>
    </define>
    <define name="ph">
       <element name="ph">
-         
          <ref name="ph.content"/>
          <ref name="ph.localattributes"/>
       </element>
    </define>
    <define name="ph.content">
-      <text/>
+      <empty/>
    </define>
    <define name="ph.localattributes">
       <optional>
-         <attribute name="type">
-            <text/>
+         <attribute name="id">
+            <data type="ID"/>
          </attribute>
+         <ref name="dispEquivSubType.attributes"/>
       </optional>
    </define>
    <define name="admin">
