@@ -1068,7 +1068,7 @@
                <attribute>
                   <anyName>
                      <except>
-                        <nsName ns="urn:iso:std:iso:30042:ed:3.0"/>
+                        <nsName ns="urn:iso:std:iso:30042:ed-2"/>
                      </except>
                   </anyName>
                </attribute>
