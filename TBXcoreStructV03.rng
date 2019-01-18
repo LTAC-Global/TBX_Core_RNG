@@ -86,14 +86,14 @@
       </optional>
    </define>
    <define name="id.attributes">
-      <ref name="id.attribute.id"/>
+      <optional>
+         <ref name="id.attribute.id"/>
+      </optional>
    </define>
    <define name="id.attribute.id">
-      <optional>
          <attribute name="id">
             <data type="ID"/>
          </attribute>
-      </optional>
    </define>
    <define name="target-IDREF.attributes">
       <ref name="target-IDREF.attribute.target"/>
@@ -527,10 +527,7 @@
    <define name="ref.localattributes">
       <ref name="IDLangTgtDtyp.attributes"/>
       <attribute name="type">
-         
-         
             <ref name="ref.types"/>
-         
       </attribute>
       <ref name="dca.attributes"/>
    </define>
@@ -560,7 +557,7 @@
       </oneOrMore>
    </define>
    <define name="conceptEntry.localattributes">
-      <ref name="id.attributes"/>
+      <ref name="id.attribute.id"/>
    </define>
    <define name="termNote">
       <element name="termNote">
