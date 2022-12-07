@@ -156,7 +156,7 @@
         <define name="date">
             <element name="date">
                 <ref name="id"/>
-                <data type="date"/>
+                <data type="dateTime"/>
             </element>
         </define>
         <define name="descrip">
