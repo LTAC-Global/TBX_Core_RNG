@@ -389,7 +389,9 @@
             <choice>
                 <element name="ref">
                     <ref name="IDLangTgtDtyp"/>
-                    <attribute name="type"/>
+                    <attribute name="type">
+                        <data type="string"/>
+                    </attribute>
                     <data type="string"/>
                 </element>
                 <element>
@@ -504,7 +506,9 @@
             <choice>
                 <element name="termNote">
                     <ref name="IDLangTgtDtyp"/>
-                    <attribute name="type"/>
+                    <attribute name="type">
+                        <data type="string"/>
+                    </attribute>
                     <ref name="entity.noteText"/>
                 </element>
                 <element>
